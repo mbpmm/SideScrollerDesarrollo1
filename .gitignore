@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+S/bin/**
+SideScroller/obj/**
+SideScroller/.vs/**
+SideScroller/SideScroller/x64/**
