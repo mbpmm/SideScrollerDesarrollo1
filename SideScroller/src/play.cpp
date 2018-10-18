@@ -1,13 +1,13 @@
 #include "play.h"
 namespace sideScroller {
 	static Rectangle r = { 400,225, HEIGHT, HEIGHT };
-	/*
+	
 	static Vector2 a1 = { 380, 50 };
 	static Vector2 a2 = { 550, 300 };
 	static Vector2 a3 = { 200, 300 };
 
 	
-	
+	/*
 	Music music;
 	static float rotation = 0.0f;
 	*/
@@ -18,7 +18,7 @@ namespace sideScroller {
 	void InitPlay() {
 		//music = LoadMusicStream("res/Music.ogg");
 		//PlayMusicStream(music);
-		//InitAsteroid(a1, a2, a3);
+		InitAsteroid(a1, a2, a3);
 	}
 	void UpdatePlay() {
 		//UpdateMusicStream(music);
@@ -29,8 +29,8 @@ namespace sideScroller {
 		}
 		if (!paused) {
 			InputShip();
-			/*AsteroidColisionRec(GetRect());
-			UpdateAsteroid();
+			AsteroidColisionRec(GetShip());
+			UpdateAsteroid();/*
 			UpdateBullet(GetShip(), GetRotation());*/
 		}
 		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
@@ -53,7 +53,7 @@ namespace sideScroller {
 		//DrawRectangleRec(r, WHITE);
 		//DrawBullet();
 		DrawShip(0.0f);
-		//DrawAsteroid();
+		DrawAsteroid();
 		if (paused) {
 			//StopMusicStream(music);
 			DrawText(FormatText("Paused"), 250, 200, 32, DARKGRAY);

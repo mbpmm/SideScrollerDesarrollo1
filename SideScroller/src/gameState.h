@@ -5,6 +5,7 @@
 #include "start.h"
 #include "credit.h"
 #include "ship.h"
+#include "asteroid.h"
 #include <iostream>
 using namespace std;
 namespace sideScroller
@@ -22,7 +23,16 @@ namespace sideScroller
 		Credit,
 		End
 	};
+	struct Asteroide {
+		float x;
+		float y;
+		bool destroyed;
+		float aRotation;
+		float rotation;
+		float aSpeed;
+		Rectangle astRectangle;
 
+	};
 	static void InitGame();
 	void PlayGame();
 	static void UpdateGame();

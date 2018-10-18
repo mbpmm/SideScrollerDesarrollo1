@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\asteroid.h" />
     <ClInclude Include="..\src\credit.h" />
     <ClInclude Include="..\src\gameState.h" />
     <ClInclude Include="..\src\play.h" />
@@ -26,6 +27,7 @@
     <ClInclude Include="..\src\start.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\asteroid.cpp" />
     <ClCompile Include="..\src\credit.cpp" />
     <ClCompile Include="..\src\gameState.cpp" />
     <ClCompile Include="..\src\main.cpp" />
