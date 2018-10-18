@@ -7,12 +7,12 @@ namespace sideScroller {
 	static Vector2 a3 = { 200, 300 };
 
 	
-	int BASESPEED = 80;
+	
 	Music music;
 	static float rotation = 0.0f;
 	*/
 
-
+	int BASESPEED = 80;
 	static bool paused = false;
 
 	void InitPlay() {
@@ -27,14 +27,14 @@ namespace sideScroller {
 			if (paused == false)paused = true;
 			else paused = false;
 		}
-		if (!paused) {/*
+		if (!paused) {
 			InputShip();
-			AsteroidColisionRec(GetRect());
+			/*AsteroidColisionRec(GetRect());
 			UpdateAsteroid();
 			UpdateBullet(GetShip(), GetRotation());*/
 		}
 		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-			gameState = End;
+			gameState = Start;
 			
 			
 			/*
@@ -50,9 +50,9 @@ namespace sideScroller {
 		}
 	}
 	void DrawPlay() {
-		DrawRectangleRec(r, WHITE);
+		//DrawRectangleRec(r, WHITE);
 		//DrawBullet();
-		//DrawShip(0.0f);
+		DrawShip(0.0f);
 		//DrawAsteroid();
 		if (paused) {
 			//StopMusicStream(music);

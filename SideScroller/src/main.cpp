@@ -6,5 +6,5 @@ using namespace sideScroller;
 void main()
 {
 	PlayGame();
-	cin.get();
+	cout << "hola" << endl;
 }

@@ -31,11 +31,11 @@ namespace sideScroller
 	}
 
 	static void UpdateGame() {
-
+		
 		switch (gameState) {
 		case Start: {
-			//UpdateStart();
-			gameState = Play;
+			UpdateStart();
+			
 		}break;
 		case Play: {
 
@@ -46,11 +46,11 @@ namespace sideScroller
 
 		}break;
 		case Credit: {
-			//UpdateCredit();
+			UpdateCredit();
 
 		}break;
 		case End: {
-
+			cout << gameState << endl;
 
 		}break;
 		}
@@ -60,7 +60,7 @@ namespace sideScroller
 		ClearBackground(BLACK);
 		switch (gameState) {
 		case Start: {
-			//DrawStart();
+			DrawStart();
 		}break;
 		case Play: {
 
@@ -71,7 +71,7 @@ namespace sideScroller
 
 		}break;
 		case Credit: {
-			//DrawCredit();
+			DrawCredit();
 
 		}break;
 		case End: {

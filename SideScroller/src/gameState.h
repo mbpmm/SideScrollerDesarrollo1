@@ -2,6 +2,9 @@
 #define GAMESTATE_H
 #include "raylib.h"
 #include "play.h"
+#include "start.h"
+#include "credit.h"
+#include "ship.h"
 #include <iostream>
 using namespace std;
 namespace sideScroller
