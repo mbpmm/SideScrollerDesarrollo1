@@ -1,9 +1,9 @@
 #include "credit.h"
 
 namespace sideScroller {
-	static int verMajor = 1;
+	static int verMajor = 0;
 
-	static int verMinor = 1;
+	static int verMinor = 5;
 
 	void UpdateCredit() {
 	

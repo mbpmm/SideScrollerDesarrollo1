@@ -18,7 +18,7 @@ namespace sideScroller {
 		}
 	}
 	void DrawStart() {
-		DrawText(FormatText("Asteroids"), 75, 10, 40, DARKGRAY);
+		DrawText(FormatText("Asteroids?"), 75, 10, 40, DARKGRAY);
 		
 		DrawRectangle(55, screenHeight - 210, 110, 50, WHITE);
 		DrawText(FormatText("Play"), 75, 200, 28, DARKGRAY);
