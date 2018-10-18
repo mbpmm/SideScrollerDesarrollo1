@@ -27,11 +27,14 @@ namespace sideScroller {
 
 	void InputShip() {
 		
-		if(IsKeyPressed(KEY_W)){
-			_ship.y += 5.0f;
+		if(IsKeyDown(KEY_W)){
+			_ship.y -= 50.0f*GetFrameTime();
 			
 		}
+		if (IsKeyDown(KEY_S)) {
+			_ship.y += 50.0f*GetFrameTime();
 
+		}
 
 		/*
 		
