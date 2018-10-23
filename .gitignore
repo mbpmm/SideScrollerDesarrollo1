@@ -24,13 +24,12 @@
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
-S/bin/**
+SideScroller/bin/**
 SideScroller/obj/**
 SideScroller/.vs/**
 SideScroller/SideScroller/x64/**

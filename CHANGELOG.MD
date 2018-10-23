@@ -12,3 +12,8 @@
 ### Added
 - ship
 - menu
+
+## [0.6.0] - 2018-10-23
+### Added
+- Asteroids
+

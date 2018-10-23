@@ -90,7 +90,6 @@ namespace sideScroller {
 					Rectangle aux2 = { aArray[i].x, aArray[i].y, aArray[i].astRectangle.width , aArray[i].astRectangle.height };
 					//DrawTexturePro(texture, origin, aux2, aux, aArray[i].rotation, WHITE);
 					DrawTexture(texture, aArray[i].x, aArray[i].y, WHITE);
-					cout << aArray[0].x << "  :  " << aArray[0].y<<endl;
 				}
 			}
 	}
