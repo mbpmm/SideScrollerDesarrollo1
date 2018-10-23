@@ -7,8 +7,6 @@ namespace sideScroller {
 	static Asteroide aArray[ARRAYSIZE];
 
 
-
-
 	static Rectangle origin;
 
 
@@ -31,13 +29,15 @@ namespace sideScroller {
 		aArray[1].astRectangle = { 0, 0, 40, 40 };
 		aArray[2].astRectangle = { 0, 0, 40, 40 };
 		
-
 		Rectangle origin = { 0.0f, 0.0f, 32.0f, 32.0f };
 		texture = LoadTexture("res/Asteroid.png");
-
+		
 	}
 
 	void UpdateAsteroid() {
+		
+		
+		
 		for (int i = 0; i < ARRAYSIZE; i++){
 			if (!aArray[i].destroyed) {
 				

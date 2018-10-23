@@ -18,6 +18,7 @@ namespace sideScroller {
 	void InitPlay() {
 		//music = LoadMusicStream("res/Music.ogg");
 		//PlayMusicStream(music);
+		InitShip();
 		InitAsteroid(a1, a2, a3);
 	}
 	void UpdatePlay() {
