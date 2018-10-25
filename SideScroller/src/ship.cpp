@@ -27,6 +27,18 @@ namespace sideScroller {
 		//Rectangle aux = { originVec.x /2, originVec.y/ 3, _ship.x, _ship.y };
 		//Rectangle auxa= { originVec.x, originVec.y, _ship.x, _ship.y};
 		cout << shipAngle<<endl;
+		if (shipAngle > 1 && shipAngle < 2 || (shipAngle < -1 && shipAngle >-2))
+			aux.x += texture.width / 2;
+		if (shipAngle <= 0.3f && shipAngle >= -0.3f) {
+			aux.x += texture.width / 2;
+			aux.y += texture.height / 3;
+
+		}
+		if (shipAngle > 2 || shipAngle <-2) {
+			aux.x += texture.width / 2;
+			aux.y += 2 * texture.height / 3;
+		}
+		/*
 		if (frameCounter < 1) {
 			if (shipAngle <= 0.3f&& shipAngle<=-0.3f)
 				aux.y += texture.height/3;
@@ -45,7 +57,7 @@ namespace sideScroller {
 					aux.x+= texture.width / 2;
 					aux.y+= 2* texture.height / 3;
 				}
-			}
+			}*/
 
 		Vector2 aux2 = { _ship.x, _ship.y};
 		//DrawTexturePro(texture,origin, aux, aux2, rotation, WHITE);
@@ -72,9 +84,13 @@ namespace sideScroller {
 			if(shipAngle<3)
 			shipAngle += 50.0f*GetFrameTime();
 		}
-		if (IsKeyDown(KEY_D)) {
+		if (IsKeyDown(KEY_A)) {
 			_ship.x -= 50.0f*GetFrameTime();
 			
+		}
+		if (IsKeyDown(KEY_D)) {
+			_ship.x += 50.0f*GetFrameTime();
+
 		}
 		if (IsKeyDown(KEY_S)) {
 			_ship.y += 50.0f*GetFrameTime();

@@ -3,6 +3,13 @@
 ## [Unreleased]
 ### Added
 - added the CHANGELOG.md to the proyect
+
+## [0.8.0] - 2018-10-23
+### Fixed
+- Ship Sprite movement
+- Asteroid Movement
+
+
 ## [0.7.0] - 2018-10-23
 ### Added
 - ship sprites

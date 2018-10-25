@@ -14,7 +14,7 @@ namespace sideScroller {
 		for (int i = 0; i < ARRAYSIZE; i++){
 			aArray[i].x = a1.x;
 			aArray[i].destroyed = false;
-			aArray[i].aRotation = (float)GetRandomValue(0, 360);
+			aArray[i].aRotation = /*(float)GetRandomValue(0, 360)*/270.0f;
 			aArray[i].rotation = 0.0f;
 			aArray[i].aSpeed = 80.0f;
 		}
