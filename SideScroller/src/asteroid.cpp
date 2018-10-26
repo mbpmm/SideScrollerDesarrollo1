@@ -10,13 +10,13 @@ namespace sideScroller {
 	static Rectangle origin;
 
 
-	void InitAsteroid(Vector2 a1, Vector2 a2, Vector2 a3) {
+	void InitAsteroid(Vector2 a1, Vector2 a2, Vector2 a3, Vector2 a4, Vector2 a5) {
 		for (int i = 0; i < ARRAYSIZE; i++){
 			aArray[i].x = a1.x;
 			aArray[i].destroyed = false;
 			aArray[i].aRotation = /*(float)GetRandomValue(0, 360)*/270.0f;
 			aArray[i].rotation = 0.0f;
-			aArray[i].aSpeed = 80.0f;
+			aArray[i].aSpeed = 000.0f+ GetRandomValue(80, 260);
 		}
 		aArray[0].x = a1.x;
 		aArray[0].y = a1.y;
@@ -24,13 +24,18 @@ namespace sideScroller {
 		aArray[1].y = a2.y;
 		aArray[2].x = a3.x;
 		aArray[2].y = a3.y;
-		
-		aArray[0].astRectangle = { 0, 0, 40, 40 };
-		aArray[1].astRectangle = { 0, 0, 40, 40 };
-		aArray[2].astRectangle = { 0, 0, 40, 40 };
-		
+		aArray[3].x = a4.x;
+		aArray[3].y = a4.y;
+		aArray[4].x = a5.x;
+		aArray[4].y = a5.y;
+
+
+
+		for (int i = 0; i < ARRAYSIZE; i++) {
+			aArray[i].astRectangle = { 0, 0, 40, 40 };
+		}
 		Rectangle origin = { 0.0f, 0.0f, 32.0f, 32.0f };
-		texture = LoadTexture("res/Asteroid.png");
+		texture = LoadTexture("res/Mine.png");
 		
 	}
 
@@ -50,16 +55,17 @@ namespace sideScroller {
 			
 
 			if (aArray[i].x > screenWidth - 5.0f) {
-				aArray[i].x -= screenWidth + 5.1f;
+				aArray[i].x -= screenWidth + 5.8f;
 			}
-			else if (aArray[i].x + 5.0f < 0.0f) {
-				aArray[i].x += screenWidth + 5.1f;
+			else if (aArray[i].x + 15.0f < 0.0f) {
+				aArray[i].x += screenWidth  - GetRandomValue(40, 100);
+				aArray[i].y = (float)GetRandomValue(10, screenHeight - 40);
 			}
 			if (aArray[i].y > screenHeight - 5.0f) {
-				aArray[i].y -= screenHeight + 5.1f;
+				aArray[i].y -= screenHeight + 5.8f;
 			}
 			else if (aArray[i].y + 5.0f < 0.0f) {
-				aArray[i].y += screenHeight + 5.1f;
+				aArray[i].y += screenHeight + 5.8f;
 			}
 
 			
@@ -69,7 +75,7 @@ namespace sideScroller {
 
 	bool AsteroidColisionRec(Rectangle r) {
 		for (int i = 0; i < ARRAYSIZE; i++){
-			Rectangle aux = { aArray[i].x, aArray[i].y, aArray[i].astRectangle.width , aArray[i].astRectangle.height };
+			Rectangle aux = { aArray[i].x -aArray[i].astRectangle.width / 2, aArray[i].y - aArray[i].astRectangle.height / 2, aArray[i].astRectangle.width/2+0 , aArray[i].astRectangle.height/2+0 };
 			if (CheckCollisionRecs(r, aux) && !aArray[i].destroyed) {
 
 				DestroyAsteroid(i);

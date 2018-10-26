@@ -16,7 +16,7 @@ namespace sideScroller {
 		tCArray[7] = LoadTexture("res/cloud8.png");
 		for (int i = 0; i < CARRAYSIZE; i++) {
 			cArray[i].x = (float)GetRandomValue(screenWidth / CARRAYSIZE * i, (screenWidth/CARRAYSIZE*(i+1))-50);
-			cArray[i].y = (float)GetRandomValue(50,screenHeight-70);
+			cArray[i].y = (float)GetRandomValue(20,screenHeight-50);
 			cArray[i].texture = tCArray[GetRandomValue(0,8)];
 			cArray[i].scale = (float)GetRandomValue(40, 80)/100;
 			cArray[i].cSpeed = 40.0f/ cArray[i].scale;
@@ -29,10 +29,10 @@ namespace sideScroller {
 			cArray[i].x -= cArray[i].cSpeed * GetFrameTime();
 		
 
-			if (cArray[i].x > screenWidth - 0.0f) {
+			if (cArray[i].x + 180.0f < 0.0f) {
 				cArray[i].scale = (float)GetRandomValue(20, 100) / 100;
-				cArray[i].x -= screenWidth + 450.0f* cArray[i].scale +GetRandomValue(-100,-50);
-				cArray[i].y = (float)GetRandomValue(50, screenHeight - 70);
+				cArray[i].x -= - screenWidth - 100.0f* cArray[i].scale - GetRandomValue(+100,+50);
+				cArray[i].y = (float)GetRandomValue(20, screenHeight - 50);
 			}
 		
 		

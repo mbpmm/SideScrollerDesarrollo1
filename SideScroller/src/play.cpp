@@ -5,8 +5,8 @@ namespace sideScroller {
 	static Vector2 a1 = { 380, 50 };
 	static Vector2 a2 = { 550, 300 };
 	static Vector2 a3 = { 200, 300 };
-
-	
+	static Vector2 a4 = { 180, 0 };
+	static Vector2 a5 = { 480, 0 };
 	/*
 	Music music;
 	static float rotation = 0.0f;
@@ -19,13 +19,14 @@ namespace sideScroller {
 		//music = LoadMusicStream("res/Music.ogg");
 		//PlayMusicStream(music);
 		InitShip();
-		InitAsteroid(a1, a2, a3);
+		InitAsteroid(a1, a2, a3, a4, a5);
 		InitCloud();
 	}
 	void UpdatePlay() {
 		//UpdateMusicStream(music);
-
-		if (IsKeyPressed(KEY_SPACE)) {
+		cout << GetMouseX() << " vs " << screenWidth - 250<<"  and  "<< GetMouseY()<<" vs "<<screenHeight <<endl;
+		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() > screenWidth - 150) && (GetMouseX() < screenWidth - 114)
+			&& (GetMouseY() > 0) && (GetMouseY() < + 32)) {
 			if (paused == false)paused = true;
 			else paused = false;
 		}
@@ -37,7 +38,9 @@ namespace sideScroller {
 			/*
 			UpdateBullet(GetShip(), GetRotation());*/
 		}
-		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() <  330) && (GetMouseX() >  250) 
+			&& (GetMouseY() < 250) && (GetMouseY() > 230)
+			) {
 			gameState = Start;
 			
 			
@@ -52,22 +55,30 @@ namespace sideScroller {
 			}*/
 
 		}
-
+		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() > screenWidth - 250) && (GetMouseX() < screenWidth - 214)
+			&& (GetMouseY() > screenHeight - 250) && (GetMouseY() < screenHeight - 214)
+			)
+			cout << "";
+		if (AllDestroyed())
+			gameState = End;
 	}
 	void DrawPlay() {
 		//DrawRectangleRec(r, WHITE);
 		//DrawBullet();
+		//DrawText("Pause", screenWidth -150, 00, 16, DARKGRAY);
 		DrawCloud();
 		DrawAsteroid();
 		
 		DrawShip(0.0f);
+
 		if (paused) {
 			//StopMusicStream(music);
-			DrawText(FormatText("Paused"), 250, 200, 32, DARKGRAY);
-			DrawText(FormatText("Menu"), 250, 230, 32, DARKGRAY);
-			
+			//DrawText("Paused", 250, 200, 32, DARKGRAY);
+			DrawText("Menu", 250, 230, 32, DARKGRAY);
+			DrawText("unPause", screenWidth - 150, 00, 16, DARKGRAY);
 		}
 		else {
+			DrawText("Pause", screenWidth - 150, 00, 16, DARKGRAY);
 			//PlayMusicStream(music);
 		}
 	}

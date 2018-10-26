@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.8.2] - 2018-10-26
+### Added
+- Bomb sprites
+
+### Changed
+- Asteroids to Bombs
+- Bomb sprites
+- Pause UI
+
+### Fixed
+- Clouds
+- Bombs
+
+
 ## [0.8.1] - 2018-10-26
 ### Added
 - Clouds

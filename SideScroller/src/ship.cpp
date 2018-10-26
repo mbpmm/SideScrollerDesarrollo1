@@ -6,9 +6,8 @@ namespace sideScroller {
 	static float _x = -100;
 	static float _y = -100;
 	static Vector2 originVec = { 64,64};
-	static float accelSpeed = 0.0f;
+	static float Speed = 80.0f;
 	static Vector2 vecSpeed = { 0.0f,0.0f };
-	static float rotation = 0.0f;
 	static Rectangle origin = { 0.0f, 0.0f,64.0f, 64.0f};
 
 	static float shipAngle;
@@ -17,9 +16,6 @@ namespace sideScroller {
 		texture = LoadTexture("res/Ship.png");
 		shipAngle = 0.0f;
 		frameCounter = 0.0f;
-	}
-	float GetRotation(){
-		return rotation;
 	}
 
 	void DrawShip(float rot) {
@@ -77,20 +73,20 @@ namespace sideScroller {
 			shipAngle -= 10*GetFrameTime();
 
 		if(IsKeyDown(KEY_W)){
-			_ship.y -= 50.0f*GetFrameTime();
+			_ship.y -= Speed *GetFrameTime();
 			if(shipAngle<3)
 			shipAngle += 50.0f*GetFrameTime();
 		}
 		if (IsKeyDown(KEY_A)) {
-			_ship.x -= 50.0f*GetFrameTime();
+			_ship.x -= Speed *GetFrameTime();
 			
 		}
 		if (IsKeyDown(KEY_D)) {
-			_ship.x += 50.0f*GetFrameTime();
+			_ship.x += Speed*GetFrameTime();
 
 		}
 		if (IsKeyDown(KEY_S)) {
-			_ship.y += 50.0f*GetFrameTime();
+			_ship.y += Speed *GetFrameTime();
 			if (shipAngle>-3)
 			shipAngle -= 50.0f*GetFrameTime();
 		}
