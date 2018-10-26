@@ -31,8 +31,15 @@ namespace sideScroller
 		float rotation;
 		float aSpeed;
 		Rectangle astRectangle;
-
 	};
+	struct Nubes {
+		float x;
+		float y;
+		float cSpeed;
+		Texture2D texture;
+		float scale;
+	};
+
 	static void InitGame();
 	void PlayGame();
 	static void UpdateGame();

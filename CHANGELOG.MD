@@ -1,18 +1,17 @@
 # Changelog
 
-## [Unreleased]
+## [0.8.1] - 2018-10-26
 ### Added
-- added the CHANGELOG.md to the proyect
+- Clouds
 
 ## [0.8.0] - 2018-10-23
 ### Fixed
 - Ship Sprite movement
 - Asteroid Movement
 
-
 ## [0.7.0] - 2018-10-23
 ### Added
-- ship sprites
+- Ship sprites
 
 ## [0.6.0] - 2018-10-23
 ### Added
@@ -20,17 +19,13 @@
 
 ## [0.5.0] - 2018-10-18
 ### Added
-- ship
-- menu
-
+- Ship
+- Menu
 
 ## [0.1.0] - 2018-10-16
 ### Added
-- starter stuff
+- Starter stuff
 
-
-
-
-
-
-
+## [Unreleased]
+### Added
+- added the CHANGELOG.md to the proyect

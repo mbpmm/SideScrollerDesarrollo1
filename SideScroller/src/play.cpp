@@ -20,6 +20,7 @@ namespace sideScroller {
 		//PlayMusicStream(music);
 		InitShip();
 		InitAsteroid(a1, a2, a3);
+		InitCloud();
 	}
 	void UpdatePlay() {
 		//UpdateMusicStream(music);
@@ -31,7 +32,9 @@ namespace sideScroller {
 		if (!paused) {
 			InputShip();
 			AsteroidColisionRec(GetShip());
-			UpdateAsteroid();/*
+			UpdateAsteroid();
+			UpdateCloud();
+			/*
 			UpdateBullet(GetShip(), GetRotation());*/
 		}
 		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
@@ -49,16 +52,20 @@ namespace sideScroller {
 			}*/
 
 		}
+
 	}
 	void DrawPlay() {
 		//DrawRectangleRec(r, WHITE);
 		//DrawBullet();
-		DrawShip(0.0f);
+		DrawCloud();
 		DrawAsteroid();
+		
+		DrawShip(0.0f);
 		if (paused) {
 			//StopMusicStream(music);
 			DrawText(FormatText("Paused"), 250, 200, 32, DARKGRAY);
 			DrawText(FormatText("Menu"), 250, 230, 32, DARKGRAY);
+			
 		}
 		else {
 			//PlayMusicStream(music);

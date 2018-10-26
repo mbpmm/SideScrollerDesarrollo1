@@ -2,7 +2,7 @@
 #define PLAY_H
 #include "raylib.h"
 #include "gameState.h"
-
+#include "cloud.h"
 #include "asteroid.h"
 namespace sideScroller {
 	const int WIDTH = 20;
