@@ -3,7 +3,7 @@
 namespace sideScroller {
 	static int verMajor = 0;
 
-	static int verMinor = 5;
+	static float verMinor = 8.1;
 
 	void UpdateCredit() {
 	
@@ -17,7 +17,8 @@ namespace sideScroller {
 	}
 	void DrawCredit(){
 		DrawText(FormatText("Made by: Ariel Plomer"), 75, 75, 32, WHITE);
-		DrawText(FormatText("version: v%i.%i", verMajor, verMinor), 75, 120, 32, WHITE);
+		DrawText(FormatText("Version: v%i.%i", verMajor, verMinor), 75, 120, 32, WHITE);
+		DrawText(FormatText("Used Kenney backgroud elements", verMajor, verMinor), 75, 120, 32, WHITE);
 		DrawRectangle(55, screenHeight - 130, 110, 50, WHITE);
 		DrawText(FormatText("Start"), 75, 280, 32, DARKGRAY);
 	
