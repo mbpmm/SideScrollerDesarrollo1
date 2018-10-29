@@ -73,13 +73,18 @@ namespace sideScroller {
 	}
 
 
-	bool AsteroidColisionRec(Rectangle r) {
+	bool AsteroidColisionRec(Rectangle r, bool bullet) {
 		for (int i = 0; i < ARRAYSIZE; i++){
-			Rectangle aux = { aArray[i].x -aArray[i].astRectangle.width / 2, aArray[i].y - aArray[i].astRectangle.height / 2, aArray[i].astRectangle.width/2+0 , aArray[i].astRectangle.height/2+0 };
-			if (CheckCollisionRecs(r, aux) && !aArray[i].destroyed) {
+			Rectangle aux = { aArray[i].x - aArray[i].astRectangle.width/2 , aArray[i].y - aArray[i].astRectangle.height/2 , aArray[i].astRectangle.width+0 , aArray[i].astRectangle.height+0 };
+			
 
+
+
+			if (CheckCollisionRecs(r, aux) && !aArray[i].destroyed) {
+				if (bullet) {
+				SetShot(false);
+			}
 				DestroyAsteroid(i);
-				
 				return true;
 			}
 		}
@@ -94,7 +99,6 @@ namespace sideScroller {
 				if (!aArray[i].destroyed) {
 					aux = { aArray[i].astRectangle.width / 2, aArray[i].astRectangle.height / 2 };
 					Rectangle aux2 = { aArray[i].x, aArray[i].y, aArray[i].astRectangle.width , aArray[i].astRectangle.height };
-					//DrawTexturePro(texture, origin, aux2, aux, aArray[i].rotation, WHITE);
 					DrawTexture(texture, aArray[i].x, aArray[i].y, WHITE);
 				}
 			}
@@ -107,7 +111,7 @@ namespace sideScroller {
 	}
 	bool AllDestroyed() {
 
-		if (GetDestroyed(0) && GetDestroyed(1) && GetDestroyed(2)) {
+		if (GetDestroyed(0) && GetDestroyed(1) && GetDestroyed(2) && GetDestroyed(3) && GetDestroyed(4)) {
 			return true;
 
 		}

@@ -18,7 +18,7 @@ namespace sideScroller {
 	
 	void InitAsteroid(Vector2 a1, Vector2 a2, Vector2 a3, Vector2 a4, Vector2 a5);
 	void UpdateAsteroid();
-	bool AsteroidColisionRec(Rectangle r);
+	bool AsteroidColisionRec(Rectangle r, bool bullet);
 	void DrawAsteroid();
 	void DestroyAsteroid(int i);
 	bool GetDestroyed(int i);

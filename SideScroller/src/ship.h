@@ -23,7 +23,6 @@ namespace sideScroller {
 		float rotation;
 	};*/
 	void InitShip();
-	float GetRotation();
 	void DrawShip(float rot);
 	void InputShip();
 	void UnloadShip();

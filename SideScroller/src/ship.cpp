@@ -90,7 +90,9 @@ namespace sideScroller {
 			if (shipAngle>-3)
 			shipAngle -= 50.0f*GetFrameTime();
 		}
-
+		if (IsKeyDown(KEY_SPACE)) {
+			SetShot(true);
+		}
 		/*
 		
 		Vector2 mousePos = GetMousePosition();

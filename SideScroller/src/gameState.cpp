@@ -8,6 +8,9 @@ namespace sideScroller
 	int score1 = 0;
 	int gameState = Start;
 
+	int verMajor = 0;
+
+	float verMinor = 8.2f;
 
 	static void InitGame() {
 		screenWidth = 800;
@@ -50,7 +53,6 @@ namespace sideScroller
 
 		}break;
 		case End: {
-			cout << gameState << endl;
 
 		}break;
 		}

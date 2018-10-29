@@ -6,6 +6,7 @@
 #include "credit.h"
 #include "ship.h"
 #include "asteroid.h"
+#include "bullet.h"
 #include <iostream>
 using namespace std;
 namespace sideScroller
@@ -15,6 +16,10 @@ namespace sideScroller
 	extern int screenHeight;
 	extern int score;
 	extern int gameState;
+
+	extern int verMajor;
+
+	extern float verMinor;
 	enum PlayState
 	{
 		Start,

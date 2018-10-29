@@ -24,7 +24,7 @@ namespace sideScroller {
 	}
 	void UpdatePlay() {
 		//UpdateMusicStream(music);
-		cout << GetMouseX() << " vs " << screenWidth - 250<<"  and  "<< GetMouseY()<<" vs "<<screenHeight <<endl;
+		
 		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() > screenWidth - 150) && (GetMouseX() < screenWidth - 114)
 			&& (GetMouseY() > 0) && (GetMouseY() < + 32)) {
 			if (paused == false)paused = true;
@@ -32,18 +32,20 @@ namespace sideScroller {
 		}
 		if (!paused) {
 			InputShip();
-			AsteroidColisionRec(GetShip());
+			AsteroidColisionRec(GetShip(), false);
+			if (GetShot())
+				AsteroidColisionRec(GetRect(), true);
 			UpdateAsteroid();
 			UpdateCloud();
-			/*
-			UpdateBullet(GetShip(), GetRotation());*/
+
+			UpdateBullet(GetShip());
 		}
-		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() <  330) && (GetMouseX() >  250) 
+		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() < 330) && (GetMouseX() > 250)
 			&& (GetMouseY() < 250) && (GetMouseY() > 230)
 			) {
 			gameState = Start;
-			
-			
+
+
 			/*
 			Vector2 aux = { GetMousePosition().x, GetMousePosition().y };
 			if (aux.x > 250 && aux.x < 360 && aux.y >200 && aux.y < 250) {
@@ -55,22 +57,16 @@ namespace sideScroller {
 			}*/
 
 		}
-		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() > screenWidth - 250) && (GetMouseX() < screenWidth - 214)
-			&& (GetMouseY() > screenHeight - 250) && (GetMouseY() < screenHeight - 214)
-			)
-			cout << "";
-		if (AllDestroyed())
-			gameState = End;
+			if (AllDestroyed()) {
+				gameState = End;
+			}
 	}
 	void DrawPlay() {
-		//DrawRectangleRec(r, WHITE);
-		//DrawBullet();
-		//DrawText("Pause", screenWidth -150, 00, 16, DARKGRAY);
 		DrawCloud();
 		DrawAsteroid();
-		
+		DrawBullet();
 		DrawShip(0.0f);
-
+		
 		if (paused) {
 			//StopMusicStream(music);
 			//DrawText("Paused", 250, 200, 32, DARKGRAY);
