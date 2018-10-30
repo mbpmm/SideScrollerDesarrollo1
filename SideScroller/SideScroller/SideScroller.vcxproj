@@ -28,6 +28,7 @@
     <ClInclude Include="..\src\play.h" />
     <ClInclude Include="..\src\ship.h" />
     <ClInclude Include="..\src\start.h" />
+    <ClInclude Include="..\src\tank.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\asteroid.cpp" />
@@ -40,6 +41,7 @@
     <ClCompile Include="..\src\play.cpp" />
     <ClCompile Include="..\src\ship.cpp" />
     <ClCompile Include="..\src\start.cpp" />
+    <ClCompile Include="..\src\tank.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

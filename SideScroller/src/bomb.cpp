@@ -1,21 +1,21 @@
 #include "bomb.h"
 namespace sideScroller {
 
-	static Vector2 BombSpeed = { 200,100 };
+	static Vector2 BombSpeed = { -1000,100 };
 	static bool Shot = false;
 	static Rectangle Bomb = { -100, -100, SQUARE / 2, SQUARE / 2 };
 	void BombMovement(Rectangle ship) {
 		if (Shot) {
-			BombSpeed.x--;
+			BombSpeed.x++;
 			BombSpeed.y++;
 
-			Bomb.y += BombSpeed.y * 1*GetFrameTime();
+			Bomb.y += BombSpeed.y *GetFrameTime();
 
 			Bomb.x -= BombSpeed.x * GetFrameTime();
 
 			if (Bomb.x < 0.0f - Bomb.width || Bomb.x > GetScreenWidth() || Bomb.y < 0.0f - Bomb.height || Bomb.y  >GetScreenHeight()) {
 				SetShotBomb(false);
-				BombSpeed.x=200;
+				BombSpeed.x=-1000;
 				BombSpeed.y=100;
 			}
 
