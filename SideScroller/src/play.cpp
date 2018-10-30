@@ -39,6 +39,7 @@ namespace sideScroller {
 			UpdateCloud();
 
 			UpdateBullet(GetShip());
+			UpdateBomb(GetShip());
 		}
 		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() < 330) && (GetMouseX() > 250)
 			&& (GetMouseY() < 250) && (GetMouseY() > 230)
@@ -65,6 +66,7 @@ namespace sideScroller {
 		DrawCloud();
 		DrawAsteroid();
 		DrawBullet();
+		DrawBomb();
 		DrawShip(0.0f);
 		
 		if (paused) {

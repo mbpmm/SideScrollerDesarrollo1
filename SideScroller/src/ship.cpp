@@ -93,6 +93,10 @@ namespace sideScroller {
 		if (IsKeyDown(KEY_SPACE)) {
 			SetShot(true);
 		}
+		if (IsKeyDown(KEY_B))
+		{
+			SetShotBomb(true);
+		}
 		/*
 		
 		Vector2 mousePos = GetMousePosition();

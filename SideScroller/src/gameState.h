@@ -7,6 +7,7 @@
 #include "ship.h"
 #include "asteroid.h"
 #include "bullet.h"
+#include "bomb.h"
 #include <iostream>
 using namespace std;
 namespace sideScroller
