@@ -6,8 +6,8 @@ namespace sideScroller {
 	static Rectangle Bomb = { -100, -100, SQUARE / 2, SQUARE / 2 };
 	void BombMovement(Rectangle ship) {
 		if (Shot) {
-			BombSpeed.x++;
-			BombSpeed.y++;
+			BombSpeed.x+=0.32f;
+			BombSpeed.y+=0.5f;
 
 			Bomb.y += BombSpeed.y *GetFrameTime();
 

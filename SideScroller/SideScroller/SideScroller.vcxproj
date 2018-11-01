@@ -22,6 +22,7 @@
     <ClInclude Include="..\src\asteroid.h" />
     <ClInclude Include="..\src\bomb.h" />
     <ClInclude Include="..\src\bullet.h" />
+    <ClInclude Include="..\src\bulletTank.h" />
     <ClInclude Include="..\src\cloud.h" />
     <ClInclude Include="..\src\credit.h" />
     <ClInclude Include="..\src\gameState.h" />
@@ -34,6 +35,7 @@
     <ClCompile Include="..\src\asteroid.cpp" />
     <ClCompile Include="..\src\bomb.cpp" />
     <ClCompile Include="..\src\bullet.cpp" />
+    <ClCompile Include="..\src\bulletTank.cpp" />
     <ClCompile Include="..\src\cloud.cpp" />
     <ClCompile Include="..\src\credit.cpp" />
     <ClCompile Include="..\src\gameState.cpp" />

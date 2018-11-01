@@ -4,6 +4,7 @@
 #include "gameState.h"
 #include "cloud.h"
 #include "asteroid.h"
+#include "tank.h"
 namespace sideScroller {
 	const int WIDTH = 20;
 	const int HEIGHT = 70;

@@ -7,6 +7,11 @@ namespace sideScroller {
 	static Vector2 a3 = { 200, 300 };
 	static Vector2 a4 = { 180, 0 };
 	static Vector2 a5 = { 480, 0 };
+	static Vector2 t1 = { 700, 368 };
+	static Vector2 t2 = { 1200, 368 };
+	static Vector2 t3 = { 1600, 368 };
+	static Vector2 t4 = { 2000, 368 };
+	static Vector2 t5 = { 2400, 368 };
 	/*
 	Music music;
 	static float rotation = 0.0f;
@@ -20,6 +25,7 @@ namespace sideScroller {
 		//PlayMusicStream(music);
 		InitShip();
 		InitAsteroid(a1, a2, a3, a4, a5);
+		InitTank(t1, t2, t3, t4, t5);
 		InitCloud();
 	}
 	void UpdatePlay() {
@@ -35,10 +41,15 @@ namespace sideScroller {
 			AsteroidColisionRec(GetShip(), false);
 			if (GetShot())
 				AsteroidColisionRec(GetRect(), true);
+			TankColisionRec(GetShip(), false);
+			if (GetShotBomb())
+				TankColisionRec(GetRectBomb(), true);
 			UpdateAsteroid();
+			UpdateTank();
 			UpdateCloud();
 
 			UpdateBullet(GetShip());
+			UpdateBulletTank(GetTank());
 			UpdateBomb(GetShip());
 		}
 		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() < 330) && (GetMouseX() > 250)
@@ -65,6 +76,7 @@ namespace sideScroller {
 	void DrawPlay() {
 		DrawCloud();
 		DrawAsteroid();
+		DrawTank();
 		DrawBullet();
 		DrawBomb();
 		DrawShip(0.0f);

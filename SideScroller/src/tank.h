@@ -22,6 +22,7 @@ namespace sideScroller {
 	void DrawTank();
 	void DestroyTank(int i);
 	bool GetDestroyedTank(int i);
-	bool AllDestroyed();
+	bool AllDestroyedTank();
+	Rectangle GetTank();
 };
 #endif
