@@ -1,13 +1,13 @@
 #include "bomb.h"
 namespace sideScroller {
 
-	static Vector2 BombSpeed = { -1000,100 };
+	static Vector2 BombSpeed = { -200,10 };
 	static bool Shot = false;
 	static Rectangle Bomb = { -100, -100, SQUARE / 2, SQUARE / 2 };
 	void BombMovement(Rectangle ship) {
 		if (Shot) {
-			BombSpeed.x+=0.32f;
-			BombSpeed.y+=0.5f;
+			BombSpeed.x+=0.00012f;
+			BombSpeed.y+=0.3f;
 
 			Bomb.y += BombSpeed.y *GetFrameTime();
 
@@ -15,8 +15,8 @@ namespace sideScroller {
 
 			if (Bomb.x < 0.0f - Bomb.width || Bomb.x > GetScreenWidth() || Bomb.y < 0.0f - Bomb.height || Bomb.y  >GetScreenHeight()) {
 				SetShotBomb(false);
-				BombSpeed.x=-1000;
-				BombSpeed.y=100;
+				BombSpeed.x=-200;
+				BombSpeed.y=10;
 			}
 
 		}if (!Shot) {

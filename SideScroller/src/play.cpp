@@ -12,6 +12,7 @@ namespace sideScroller {
 	static Vector2 t3 = { 1600, 368 };
 	static Vector2 t4 = { 2000, 368 };
 	static Vector2 t5 = { 2400, 368 };
+	static char instrucciones[] = "Movimiento=WASD, Disparo=SPACE, Bomba= B";
 	/*
 	Music music;
 	static float rotation = 0.0f;
@@ -49,7 +50,6 @@ namespace sideScroller {
 			UpdateCloud();
 
 			UpdateBullet(GetShip());
-			UpdateBulletTank(GetTank());
 			UpdateBomb(GetShip());
 		}
 		else if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && (GetMouseX() < 330) && (GetMouseX() > 250)
@@ -76,11 +76,12 @@ namespace sideScroller {
 	void DrawPlay() {
 		DrawCloud();
 		DrawAsteroid();
+		
 		DrawTank();
 		DrawBullet();
 		DrawBomb();
 		DrawShip(0.0f);
-		
+		DrawText(instrucciones, 10, 10, 15, YELLOW);
 		if (paused) {
 			//StopMusicStream(music);
 			//DrawText("Paused", 250, 200, 32, DARKGRAY);

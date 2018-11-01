@@ -15,7 +15,7 @@ namespace sideScroller {
 	//extern Asteroide aArray[ARRAYSIZE];
 
 
-
+	const int BULLETTANKSPEED = 200;
 	void InitTank(Vector2 a1, Vector2 a2, Vector2 a3, Vector2 a4, Vector2 a5);
 	void UpdateTank();
 	bool TankColisionRec(Rectangle r, bool bullet);
@@ -23,6 +23,7 @@ namespace sideScroller {
 	void DestroyTank(int i);
 	bool GetDestroyedTank(int i);
 	bool AllDestroyedTank();
-	Rectangle GetTank();
+	void SetShotTank(bool sho);
+	Vector2 GetTank();
 };
 #endif

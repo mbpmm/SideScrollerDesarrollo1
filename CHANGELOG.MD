@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1] - 2018-11-1
+### Added
+- New enemy: Tanks.
+- New weapon: Bombs.
+- Modified the version number, both in credit and start screens.
+- Instructions in Gameplay screen.
+
 ## [0.8.2] - 2018-10-26
 ### Added
 - Bomb sprites

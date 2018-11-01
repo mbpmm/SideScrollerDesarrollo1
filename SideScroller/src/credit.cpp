@@ -15,7 +15,7 @@ namespace sideScroller {
 	}
 	void DrawCredit(){
 		DrawText("Made by: Ariel Plomer", 75, 75, 32, WHITE);
-		DrawText(FormatText("Version: v%i.%f", verMajor, verMinor), 75, 120, 32, WHITE);
+		DrawText(FormatText("Version:1.1", verMajor, verMinor), 75, 120, 32, WHITE);
 		DrawText("Used Kenney backgroud elements", 75, 165, 32, WHITE);
 		DrawRectangle(55, screenHeight - 130, 110, 50, WHITE);
 		DrawText("Menu", 75, 280, 32, DARKGRAY);

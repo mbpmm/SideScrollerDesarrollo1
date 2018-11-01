@@ -5,16 +5,18 @@ namespace sideScroller {
 
 
 	static Tank tArray[ARRAYSIZE];
-
-
+	static bool shot;
+	static int tankSpeed = 80;
+	bool bulletImpact;
 	static Rectangle origin;
-
+	static Rectangle bulletTank = {-32 ,368, SQUARE / 4, SQUARE / 4 };
 
 	void InitTank(Vector2 t1, Vector2 t2, Vector2 t3, Vector2 t4, Vector2 t5) {
 		for (int i = 0; i < ARRAYSIZE; i++) {
 			tArray[i].x = t1.x;
 			tArray[i].destroyedT = false;
-			tArray[i].tSpeed = 80.0f;
+			tArray[i].tSpeed = tankSpeed;
+			tArray[i].bulletTank = bulletTank;
 		}
 		tArray[0].x = t1.x;
 		tArray[0].y = t1.y;
@@ -26,9 +28,19 @@ namespace sideScroller {
 		tArray[3].y = t4.y;
 		tArray[4].x = t5.x;
 		tArray[4].y = t5.y;
+		tArray[0].bulletTank.x = t1.x;
+		tArray[0].bulletTank.y = t1.y;
+		tArray[1].bulletTank.x = t2.x;
+		tArray[1].bulletTank.y = t2.y;
+		tArray[2].bulletTank.x = t3.x;
+		tArray[2].bulletTank.y = t3.y;
+		tArray[3].bulletTank.x = t4.x;
+		tArray[3].bulletTank.y = t4.y;
+		tArray[4].bulletTank.x = t5.x;
+		tArray[4].bulletTank.y = t5.y;
 
-
-
+		shot = true;
+		bulletImpact = false;
 		for (int i = 0; i < ARRAYSIZE; i++) {
 			tArray[i].tRectangle = { 0, 0, 40, 40 };
 		}
@@ -45,7 +57,20 @@ namespace sideScroller {
 			if (!tArray[i].destroyedT) {
 
 				tArray[i].x -= tArray[i].tSpeed *GetFrameTime();
+				shot = true;
+				if (shot) {
+					tArray[i].bulletTank.y -= BULLETTANKSPEED * GetFrameTime();
 
+					tArray[i].bulletTank.x -= BULLETTANKSPEED * GetFrameTime();
+
+					if (tArray[i].bulletTank.y < 0.0f - tArray[i].bulletTank.height || tArray[i].bulletTank.y  >GetScreenHeight()) {
+						SetShotTank(false);
+					}
+
+				}if (!shot) {
+					tArray[i].bulletTank.x = tArray[i].x;
+					tArray[i].bulletTank.y = tArray[i].y;
+				}
 			}
 
 			if (tArray[i].x > 2500) {
@@ -60,6 +85,9 @@ namespace sideScroller {
 		}
 	}
 
+	void SetShotTank(bool sho) {
+		shot = sho;
+	}
 
 	bool TankColisionRec(Rectangle r, bool bullet) {
 		for (int i = 0; i < ARRAYSIZE; i++) {
@@ -72,6 +100,10 @@ namespace sideScroller {
 				}
 				DestroyTank(i);
 				return true;
+			}
+			if (CheckCollisionRecs(tArray[i].bulletTank, GetShip()) && !tArray[i].destroyedT) {
+				gameState = End;
+				bulletImpact = true;
 			}
 		}
 		return false;
@@ -86,6 +118,7 @@ namespace sideScroller {
 				aux = { tArray[i].tRectangle.width / 2, tArray[i].tRectangle.height / 2 };
 				Rectangle aux2 = { tArray[i].x, tArray[i].y, tArray[i].tRectangle.width , tArray[i].tRectangle.height };
 				DrawTexture(texture, tArray[i].x, tArray[i].y, WHITE);
+				DrawRectangleRec(tArray[i].bulletTank, WHITE);
 			}
 		}
 	}
@@ -104,9 +137,9 @@ namespace sideScroller {
 		return false;
 	}
 
-	Rectangle GetTank() {
+	Vector2 GetTank() {
 		for (int i = 0; i < ARRAYSIZE; i++) {
-			return tArray[i].tRectangle;
+			return { tArray[i].x-32,tArray[i].y-32 };
 		}
 	}
 }

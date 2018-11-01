@@ -38,13 +38,16 @@ namespace sideScroller
 		float aSpeed;
 		Rectangle astRectangle;
 	};
+
 	struct Tank {
 		float x;
 		float y;
 		bool destroyedT;
 		float tSpeed;
 		Rectangle tRectangle;
+		Rectangle bulletTank;
 	};
+	
 	struct Nubes {
 		float x;
 		float y;

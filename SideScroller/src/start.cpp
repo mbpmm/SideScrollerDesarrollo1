@@ -20,7 +20,7 @@ namespace sideScroller {
 	void DrawStart() {
 		DrawText(FormatText("Gradius"), 75, 10, 40, DARKGRAY);
 		
-		DrawText(FormatText("Version: v%i.%f", verMajor, verMinor), 75, 120, 32, WHITE);
+		DrawText(FormatText("Version: 1.1", verMajor, verMinor), 75, 120, 32, WHITE);
 
 		DrawRectangle(55, screenHeight - 210, 110, 50, WHITE);
 		DrawText(FormatText("Play"), 75, 200, 28, DARKGRAY);
